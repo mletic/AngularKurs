@@ -1,0 +1,13 @@
+{
+  "name": "Zadatak1",
+  "homepage": "https://github.com/mletic/AngularKurs",
+  "authors": [
+    "Marko Letic <marc_letic@yahoo.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
