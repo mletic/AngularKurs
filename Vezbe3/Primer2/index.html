@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Uvod u Angular</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+  </head>
+  <body ng-app='controllerAsExample'>
+    <div id="ctrl-as-exmpl" ng-controller="TestController2 as testCtrl">
+      <label>Name: <input type="text" ng-model="testCtrl.name"/></label>
+      <button ng-click="testCtrl.greet()">greet</button><br/>
+      Contact:
+      <ul>
+        <li ng-repeat="contact in testCtrl.contacts">
+          <select ng-model="contact.type" aria-label="Contact method" id="select_{{$index}}">
+             <option>phone</option>
+             <option>email</option>
+          </select>
+          <input type="text" ng-model="contact.value" aria-labelledby="select_{{$index}}" />
+          <button ng-click="testCtrl.clearContact(contact)">clear</button>
+          <button ng-click="testCtrl.removeContact(contact)" aria-label="Remove">X</button>
+        </li>
+        <li><button ng-click="testCtrl.addContact()">add</button></li>
+     </ul>
+    </div>
+  </body>
+</html>
