@@ -10,7 +10,6 @@ app.controller('StudentController', function($scope)
 		prosek: '',
 		godinaUpisa: ''
 	};
-	self.studenti = [];
 	self.studentZaIspis = {};
 
 	self.dodajStudenta = function () {
