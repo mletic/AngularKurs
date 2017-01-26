@@ -22,6 +22,8 @@ app.controller('StudentController', function($scope)
 
 	self.obrisiStudenta = function (index) {
 		console.log(index);
+		//delete self.studenti[index];
+		self.studenti.splice(index, 1);
 	};
 
 
