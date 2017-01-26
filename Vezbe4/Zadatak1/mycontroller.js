@@ -10,10 +10,12 @@ app.controller('StudentController', function($scope)
 		prosek: '',
 		godinaUpisa: ''
 	};
+	self.studenti = [];
+	self.studentZaIspis = {};
 
-	self.ispisiStudenta = function () {
+	self.dodajStudenta = function () {
 
-		console.log(self.student);
+		self.studentZaIspis = angular.copy(self.student);
 	};
 
 });
