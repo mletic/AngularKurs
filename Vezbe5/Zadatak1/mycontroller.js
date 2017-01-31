@@ -1,4 +1,4 @@
-app.controller('StudentController', ['$scope', '$log', function($scope, $log)
+app.controller('StudentController', ['$scope', '$log', 'studentskiServis', function($scope, $log, studentskiServis)
 {
 	var self = this;
 
@@ -10,14 +10,15 @@ app.controller('StudentController', ['$scope', '$log', function($scope, $log)
 		prosek: '',
 		godinaUpisa: ''
 	};
-	self.studenti = [];
+	self.studenti = studentskiServis.getStudenti();
 	self.studentZaIspis = {};
 
 	self.dodajStudenta = function () {
 		$log.debug('StudentController.dodajStudenta()');
 
-		self.studentZaIspis = angular.copy(self.student);
-		self.studenti.push(self.studentZaIspis);
+		studentskiServis.addStudent(self.student);
+		self.studenti = studentskiServis.getStudenti();
+		studentskiServis._removeStudent();
 	};
 
 	self.obrisiStudenta = function (index) {
