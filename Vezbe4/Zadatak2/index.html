@@ -2,6 +2,7 @@
 	<head>
 		<title>Vezbe 4 - Zadatak 2</title>
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="styles/css/style.css"/>
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="app.js" type="text/javascript"></script>
 		<script src="mycontroller.js" type="text/javascript"></script>
@@ -9,7 +10,7 @@
 	<body ng-app='MyApp'>
 		<div class="col-md-12" ng-controller="StudentController as studentCtrl">
 			<!--INPUT FORM -->
-			<div class="col-md-6">
+			<div class="student-form col-md-6">
 				<h1>FORMA</h1>
 				<span>
 					<label>Ime: </label>
@@ -35,23 +36,24 @@
 					<label>Godina upisa: </label>
 					<input type="number" ng-model="studentCtrl.student.godinaUpisa"/>
 				</span>
-				<button ng-click="studentCtrl.dodajStudenta()">Dodaj studenta</button>
-				<!-- BONUS - ZA DOMACI -->
+				<button class="btn btn-success" ng-click="studentCtrl.dodajStudenta()">Dodaj studenta</button>
 			</div>
 
 			<!--TABLE -->
 			<div class="col-md-6">
 				<h1>TABELA</h1>
 				<table class="table">
-					<tr>
-						<td>Ime</td>
-						<td>Fakultet</td>
-						<td>Indeks</td>
-						<td>Prosek</td>
-						<td>Godina upisa</td>
-						<td>Kontrole</td>
-					</tr>
-					<tr ng-repeat="std in studentCtrl.studenti">
+					<thead>
+						<tr>
+							<td>Ime</td>
+							<td>Fakultet</td>
+							<td>Indeks</td>
+							<td>Prosek</td>
+							<td>Godina upisa</td>
+							<td>Kontrole</td>
+						</tr>
+					</thead>
+					<tr ng-repeat="std in studentCtrl.studenti" ng-class="{'manji-prosek': std.prosek < 8}">
 						<td>{{std.ime}}</td>
 						<td>{{std.fakultet}}</td>
 						<td>{{std.index}}</td>
@@ -59,7 +61,8 @@
 						<td>{{std.godinaUpisa}}</td>
 						<td>
 							<button ng-click="studentCtrl.obrisiStudenta($index)">Obrisi</button>
-							<button ng-click="studentCtrl.editStudenta($index)">Edit</button>
+							<!-- BONUS - ZA DOMACI -->
+							<button ng-click="studentCtrl.editStudenta($index)"" ng-disabled="{{std.godinaUpisa < 2009}}">Edit</button>
 						</td>
 					</tr>
 				</table>
