@@ -1,0 +1,12 @@
+.student-form span {
+	display: block;
+}
+.student-form span label {
+	width: 100px;
+}
+.student-form button {
+	margin: 10px;
+}
+.manji-prosek {
+	background-color: #666666;
+}

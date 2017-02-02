@@ -12,7 +12,6 @@ dump.rdb
 *.log
 .DS_Store
 .DS_Store?
-*.css
 *.map
 *.sublime-project
 *.sublime-workspace
