@@ -6,9 +6,9 @@ app.controller('StudentController', ['$scope', '$log', 'studentskiServis', funct
 		ime: '',
 		prezime: '',
 		fakultet: '',
-		index: '',
-		prosek: '',
-		godinaUpisa: ''
+		index: null,
+		prosek: null,
+		godinaUpisa: null
 	};
 	self.studenti = studentskiServis.getStudenti();
 	self.studentZaIspis = {};
@@ -18,20 +18,27 @@ app.controller('StudentController', ['$scope', '$log', 'studentskiServis', funct
 
 		studentskiServis.addStudent(self.student);
 		self.studenti = studentskiServis.getStudenti();
-		studentskiServis._removeStudent();
 	};
 
 	self.obrisiStudenta = function (index) {
 		$log.debug('StudentController.obrisiStudenta()');
 
-		self.studenti.splice(index, 1);
+		studentskiServis.removeStudent(index);
+		self.studenti = studentskiServis.getStudenti();
 	};
 
-	//DOMACI
-	self.editStudenta = function (index) {
-		$log.debug('StudentController.editStudenta()');
+	self.updateStudent = function () {
+		$log.debug('StudentController.editStudent()');
+		
+		studentskiServis.updateStudent(self.student, self.student.index);
+		self.studenti = studentskiServis.getStudenti();
+	};
 
-		self.student = self.studenti[index];
+	self.addStudentDataToEditForm = function (index) {
+		$log.debug('StudentController.addStudentDataToEditForm()');
+
+		self.student = angular.copy(self.studenti[index]);
+		self.student.index = index;
 	};
 
 

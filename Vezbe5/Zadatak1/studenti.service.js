@@ -1,52 +1,13 @@
 app.factory('studentskiServis', ['$log', function($log)
 {
 
-	var studenti = [
-		{
-			ime: 'Marko',
-			prezime: 'Letic',
-			fakultet: 'FTN',
-			index: '222',
-			prosek: '11',
-			godinaUpisa: '2019'
-		},
-		{
-			ime: 'Marko',
-			prezime: 'Letic',
-			fakultet: 'FTN',
-			index: '222',
-			prosek: '11',
-			godinaUpisa: '2019'
-		},
-		{
-			ime: 'Marko',
-			prezime: 'Letic',
-			fakultet: 'FTN',
-			index: '222',
-			prosek: '11',
-			godinaUpisa: '2019'
-		},
-		{
-			ime: 'Marko',
-			prezime: 'Letic',
-			fakultet: 'FTN',
-			index: '222',
-			prosek: '11',
-			godinaUpisa: '2019'
-		},
-		{
-			ime: 'Marko',
-			prezime: 'Letic',
-			fakultet: 'FTN',
-			index: '222',
-			prosek: '11',
-			godinaUpisa: '2019'
-		}
-	];
+	var studenti = _getStudentiBaza();
 
 	return {
 		getStudenti: getStudenti,
-		addStudent: addStudent
+		addStudent: addStudent,
+		removeStudent: removeStudent,
+		updateStudent: updateStudent
 	}
 
 	function addStudent (student) {
@@ -54,13 +15,70 @@ app.factory('studentskiServis', ['$log', function($log)
 
 		studenti.push(student);
 	}
+
 	function getStudenti () {
 		$log.debug('studentskiServis.getStudenti()');
 
 		return studenti;
 	}
-	function _removeStudent () {
+
+	function removeStudent (index) {
 		$log.debug('studentskiServis.removeStudent()');
+
+		studenti.splice(index, 1);
+	}
+
+	function updateStudent (student, index) {
+		$log.debug('studentskiServis.removeStudent()');
+
+		studenti[index] = student;
+	}
+
+	function _getStudentiBaza () {
+		var studenti = [
+			{
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
+				index: 222,
+				prosek: 11,
+				godinaUpisa: 2019
+			},
+			{
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
+				index: 222,
+				prosek: 11,
+				godinaUpisa: 2019
+			},
+			{
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
+				index: 222,
+				prosek: 11,
+				godinaUpisa: 2019
+			},
+			{
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
+				index: 222,
+				prosek: 11,
+				godinaUpisa: 2019
+			},
+			{
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
+				index: 222,
+				prosek: 11,
+				godinaUpisa: 2019
+			}
+		];
+
+		return studenti;
 	}
 
 }]);

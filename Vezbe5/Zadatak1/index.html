@@ -38,6 +38,7 @@
 					<input type="number" ng-model="studentCtrl.student.godinaUpisa"/>
 				</span>
 				<button class="btn btn-success" ng-click="studentCtrl.dodajStudenta()">Dodaj studenta</button>
+				<button class="btn btn-default" ng-click="studentCtrl.updateStudent()">Izmeni studenta</button>
 			</div>
 
 			<!--TABLE -->
@@ -63,7 +64,7 @@
 						<td>
 							<button ng-click="studentCtrl.obrisiStudenta($index)">Obrisi</button>
 							<!-- BONUS - ZA DOMACI -->
-							<button ng-click="studentCtrl.editStudenta($index)" ng-disabled="{{std.godinaUpisa < 2009}}">Edit</button>
+							<button ng-click="studentCtrl.addStudentDataToEditForm($index)" ng-disabled="{{std.godinaUpisa < 2009}}">Edit</button>
 						</td>
 					</tr>
 				</table>
