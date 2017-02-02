@@ -14,6 +14,13 @@ myApp.config(function($stateProvider) {
 		template: '<h3>Its the UI-Router hello world app!</h3>'
 	}
 
+	var mojeStanje = {
+		name: 'mojeStanje',
+		url: '/NESTONESTO',
+		templateUrl: 'mojestanje.html'
+	}
+
 	$stateProvider.state(helloState);
 	$stateProvider.state(aboutState);
+	$stateProvider.state(mojeStanje);
 });
