@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ui.router']);
+var app = angular.module('MyApp', ['ui.router', 'ngInputDate']);
 
 app.config(function ($logProvider) {
 	$logProvider.debugEnabled(true);
@@ -12,7 +12,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 		// HOME STATES AND NESTED VIEWS ========================================
 		.state('students', {
 			url: '/students',
-			//templateUrl: 'studentsManagement.html'
+			templateUrl: 'features/students/student.template.html'
 		})
 		// ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
 		.state('teachers', {
