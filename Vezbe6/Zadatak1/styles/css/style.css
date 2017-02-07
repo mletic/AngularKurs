@@ -1,12 +1,19 @@
+.student-form {
+	border-left: 1px solid;
+}
 .student-form span {
 	display: block;
 }
 .student-form span label {
 	width: 100px;
 }
-.student-form button {
-	margin: 10px;
+.student-form .close-button{
+	position: absolute;
+	right: 0px;
 }
 .manji-prosek {
 	background-color: #666666;
+}
+.selected {
+	background-color: #b3b3b3;
 }
