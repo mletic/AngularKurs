@@ -3,9 +3,11 @@ app.controller('StudentController', ['$scope', '$log', 'studentDataService', fun
 	var self = this;
 
 	self.student = null;
+
 	studentDataService.getStudents().then(function(students) {
 		self.students = students;
 	});
+
 	self.studentZaIspis = {};
 
 	self.dateOptions = {
@@ -42,8 +44,10 @@ app.controller('StudentController', ['$scope', '$log', 'studentDataService', fun
 	self.dodajStudenta = function () {
 		$log.debug('StudentController.dodajStudenta()');
 
-		studentDataService.addStudent(self.student);
-		self.initLoad();
+		studentDataService.addStudent(self.student).then(function() {
+			self.initLoad();
+		});
+		
 	};
 
 	self.obrisiStudenta = function (index) {

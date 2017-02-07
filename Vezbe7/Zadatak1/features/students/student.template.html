@@ -15,7 +15,7 @@
 					<td>Kontrole</td>
 				</tr>
 			</thead>
-			<tr ng-repeat="std in studentCtrl.students" ng-class="{'manji-prosek': std.prosek < 8, 'selected': $index === studentCtrl.index}" ng-click="studentCtrl.addStudentDataToEditForm($index)">
+			<tr ng-repeat="(id, std) in studentCtrl.students" ng-class="{'manji-prosek': std.prosek < 8, 'selected': $index === studentCtrl.index}" ng-click="studentCtrl.addStudentDataToEditForm(id)">
 				<td>{{std.firstname}}</td>
 				<td>{{std.lastname}}</td>
 				<td>{{std.faculty}}</td>
@@ -24,7 +24,7 @@
 				<td>{{std.year}}</td>
 				<td>{{std.dateOfBirth | date:'fullDate' }}</td>
 				<td>
-					<button ng-click="studentCtrl.obrisiStudenta($index)">Obrisi</button>
+					<button ng-click="studentCtrl.obrisiStudenta(id)">Obrisi</button>
 				</td>
 			</tr>
 		</table>
