@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ui.router', 'ui.bootstrap']);
+var app = angular.module('MyApp', ['ui.router', 'ngInputDate']);
 
 app.config(function ($logProvider) {
 	$logProvider.debugEnabled(true);
@@ -17,6 +17,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 		// ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
 		.state('teachers', {
 			url: '/teachers',
-			templateUrl: 'features/teachers/teacher.template.html'
+			// we'll get to this in a bit       
 		});
 }]);

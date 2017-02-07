@@ -1,84 +1,84 @@
-app.factory('studentDataService', ['$log', function($log)
+app.factory('studentskiServis', ['$log', function($log)
 {
 
-	var students = _getStudentsDatabase();
+	var studenti = _getStudentiBaza();
 
 	return {
-		getStudents: getStudents,
+		getStudenti: getStudenti,
 		addStudent: addStudent,
 		removeStudent: removeStudent,
 		updateStudent: updateStudent
 	}
 
 	function addStudent (student) {
-		$log.debug('studentDataService.addStudent()');
+		$log.debug('studentskiServis.addStudent()');
 
-		students.push(student);
+		studenti.push(student);
 	}
 
-	function getStudents () {
-		$log.debug('studentDataService.getStudents()');
+	function getStudenti () {
+		$log.debug('studentskiServis.getStudenti()');
 
-		return students;
+		return studenti;
 	}
 
 	function removeStudent (index) {
-		$log.debug('studentDataService.removeStudent()');
+		$log.debug('studentskiServis.removeStudent()');
 
-		students.splice(index, 1);
+		studenti.splice(index, 1);
 	}
 
 	function updateStudent (student, index) {
-		$log.debug('studentDataService.removeStudent()');
+		$log.debug('studentskiServis.removeStudent()');
 
-		students[index] = student;
+		studenti[index] = student;
 	}
 
-	function _getStudentsDatabase () {
-		var students = [
+	function _getStudentiBaza () {
+		var studenti = [
 			{
-				firstname: 'Marko',
-				lastname: 'Letic',
-				faculty: 'FTN',
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
 				index: 222,
-				averageGrade: 11,
-				year: 2019
+				prosek: 11,
+				godinaUpisa: 2019
 			},
 			{
-				firstname: 'Dusan',
-				lastname: 'Pavlovic',
-				faculty: 'FTN',
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
 				index: 222,
-				averageGrade: 11,
-				year: 2009
+				prosek: 11,
+				godinaUpisa: 2019
 			},
 			{
-				firstname: 'Milos',
-				lastname: 'Petrovic',
-				faculty: 'FTN',
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
 				index: 222,
-				averageGrade: 11,
-				year: 2007
+				prosek: 11,
+				godinaUpisa: 2019
 			},
 			{
-				firstname: 'Dejan',
-				lastname: 'Miletic',
-				faculty: 'FTN',
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
 				index: 222,
-				averageGrade: 11,
-				year: 1999
+				prosek: 11,
+				godinaUpisa: 2019
 			},
 			{
-				firstname: 'Jovana',
-				lastname: 'Pavlovic',
-				faculty: 'FTN',
+				ime: 'Marko',
+				prezime: 'Letic',
+				fakultet: 'FTN',
 				index: 222,
-				averageGrade: 11,
-				year: 2011
+				prosek: 11,
+				godinaUpisa: 2019
 			}
 		];
 
-		return students;
+		return studenti;
 	}
 
 }]);
