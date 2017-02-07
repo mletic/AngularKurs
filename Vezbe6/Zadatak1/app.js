@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ui.router', 'ngInputDate']);
+var app = angular.module('MyApp', ['ui.router']);
 
 app.config(function ($logProvider) {
 	$logProvider.debugEnabled(true);
