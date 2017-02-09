@@ -1,13 +1,16 @@
-app.factory('studentDataService', ['$log', '$http', '$q', function($log, $http, $q)
+app.factory('studentDataService', ['$log', '$http', '$q', '$firebaseObject', 
+	function($log, $http, $q, $firebaseObject)
 {
 
 	var rootUrl = 'https://angularkurs.firebaseio.com/';
+	var ref = firebase.database().ref().child("students");
 
 	return {
 		getStudents: getStudents,
 		addStudent: addStudent,
 		removeStudent: removeStudent,
-		updateStudent: updateStudent
+		updateStudent: updateStudent,
+		removeStudentWS: removeStudentWS
 	}
 
 	function addStudent (student) {
@@ -84,6 +87,7 @@ app.factory('studentDataService', ['$log', '$http', '$q', function($log, $http, 
 			$log.error('Removing student failed with status: ' + error.status);
 			return $q.reject(error);
 		}
+		
 	}
 
 	function updateStudent (student, id) {
@@ -110,6 +114,20 @@ app.factory('studentDataService', ['$log', '$http', '$q', function($log, $http, 
 			$log.error('Adding new student failed with status: ' + error.status);
 			return $q.reject(error);
 		}
+	}
+
+	function removeStudentWS (id) {
+		$log.debug('studentDataService.removeStudentWS()');
+
+		var studentRef = ref.child(id);
+		var student = $firebaseObject(studentRef);
+
+		student.$remove().then(function(ref) {
+			// data has been deleted locally and in the database
+			console.log('Uspesno obrisan');
+		}, function(error) {
+			console.log("Error:", error);
+		});
 	}
 
 }]);

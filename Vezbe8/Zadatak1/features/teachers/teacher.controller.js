@@ -1,9 +1,13 @@
-app.controller('TeacherController', ['$scope', '$log', 'teacherDataService', function($scope, $log, teacherDataService)
+app.controller('TeacherController', ['$scope', '$log', 'teacherDataService', '$firebaseObject',
+	function($scope, $log, teacherDataService, $firebaseObject)
 {
 	var self = this;
 
 	self.teacher = null;
-	self.teachers = teacherDataService.getTeachers();
+	
+	var ref = firebase.database().ref().child("teachers");
+	self.teachers = $firebaseObject(ref);
+
 	self.teacherToOutput = {};
 
 	self.addTeacher = function () {

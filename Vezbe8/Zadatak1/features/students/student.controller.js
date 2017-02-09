@@ -57,7 +57,7 @@ app.controller('StudentController', ['$scope', '$log', 'studentDataService', '$f
 	self.obrisiStudenta = function (id) {
 		$log.debug('StudentController.obrisiStudenta()');
 
-		studentDataService.removeStudent(id);
+		studentDataService.removeStudentWS(id);
 	};
 
 	self.updateStudent = function () {
