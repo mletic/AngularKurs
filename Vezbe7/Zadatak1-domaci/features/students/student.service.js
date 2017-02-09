@@ -95,17 +95,17 @@ app.factory('studentDataService', ['$log', '$http', '$q', function($log, $http, 
 			method: "PUT",
 			data: student
 		})
-		.then(addStudentComplete)
-		.catch(addStudentFailed);
+		.then(updateStudentComplete)
+		.catch(updateStudentFailed);
 
-		function addStudentComplete(response) {
-			$log.debug('studentDataService.addStudentComplete()');
+		function updateStudentComplete(response) {
+			$log.debug('studentDataService.updateStudentComplete()');
 
 			return response.data;
 		}
 
-		function addStudentFailed(error) {
-			$log.error('studentDataService.addStudentFailed()');
+		function updateStudentFailed(error) {
+			$log.error('studentDataService.updateStudentFailed()');
 
 			$log.error('Adding new student failed with status: ' + error.status);
 			return $q.reject(error);
