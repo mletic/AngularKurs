@@ -1,6 +1,6 @@
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 	
-	$urlRouterProvider.otherwise('/students');
+	$urlRouterProvider.otherwise('/login');
 	
 	$stateProvider
 		// HOME STATES AND NESTED VIEWS ========================================
@@ -12,5 +12,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 		.state('teachers', {
 			url: '/teachers',
 			templateUrl: 'features/teachers/teacher.template.html'
+		})
+		.state('login', {
+			url: '/login',
+			templateUrl: 'login.template.html'
 		});
 }]);
