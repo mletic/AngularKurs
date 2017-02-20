@@ -9,6 +9,7 @@ app.controller('StudentController', ['$scope', '$log', 'studentDataService', '$f
 		self.students = students;
 	});
 	*/
+	
 	var ref = firebase.database().ref().child("students");
 	self.students = $firebaseObject(ref);
 

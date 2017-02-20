@@ -1,20 +1,28 @@
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-	
+
 	$urlRouterProvider.otherwise('/login');
 	
 	$stateProvider
-		// HOME STATES AND NESTED VIEWS ========================================
 		.state('students', {
 			url: '/students',
-			templateUrl: 'features/students/student.template.html'
+			templateUrl: 'features/students/student.template.html',
+			resolve: {
+				currentAuth: ['Auth', function(Auth) {
+					return Auth.loggedIn;
+				}]
+			}
 		})
-		// ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
 		.state('teachers', {
 			url: '/teachers',
-			templateUrl: 'features/teachers/teacher.template.html'
+			templateUrl: 'features/teachers/teacher.template.html',
+			resolve: {
+				currentAuth: ['Auth', function(Auth) {
+					return Auth.loggedIn;
+				}]
+			}
 		})
 		.state('login', {
 			url: '/login',
-			templateUrl: 'login.template.html'
+			templateUrl: 'features/login/login.template.html'
 		});
 }]);

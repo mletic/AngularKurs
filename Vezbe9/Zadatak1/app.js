@@ -2,7 +2,7 @@ var app = angular.module('MyApp', ['ui.router', 'ui.bootstrap', 'firebase']);
 
 app.config(function ($logProvider) {
 	$logProvider.debugEnabled(true);
-	/*
+	
 	// Initialize Firebase
 	var config = {
 		apiKey: "AIzaSyAqhKgP3xmeL9CxvYSeUlNOPK3T1SddPvY",
@@ -12,5 +12,5 @@ app.config(function ($logProvider) {
 		messagingSenderId: "219706523111"
 	};
 	firebase.initializeApp(config);
-	*/
+	
 });
