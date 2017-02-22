@@ -16,10 +16,12 @@
 		<script src="bower_components/angular-material/angular-material.min.js"></script>
 		<script src="bower_components/angular-animate/angular-animate.min.js"></script>
 		<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+		<script src="bower_components/angular-translate/angular-translate.js"></script>
 		<!-- ADD MAIN MODULE -->
 		<script src="app.js"></script>
 		<!-- ADD CONFIG -->
 		<script src="routes.config.js"></script>
+		<script src="translations.config.js"></script>
 		<!-- ADD SERVICES -->
 		<script src="features/login/auth.service.js"></script>
 		<script src="features/students/student.service.js"></script>
@@ -41,7 +43,7 @@
 				</div>
 				<span class="user-data">
 					<span class="user-email">{{user.email}}</span>
-					<a ng-click="logout()">
+					<a ng-click="mainCtrl.openUserSettings()">
 						<img ng-src="{{user.photoURL}}"/>
 					</a>
 				</span>
@@ -50,14 +52,14 @@
 
 			<md-sidenav class="md-sidenav-left" md-component-id="left">
 				<md-toolbar class="md-theme-indigo">
-					<a class="md-toolbar-tools" ng-click="mainCtrl.changeState('students')">Studenti</a>
+					<a class="md-toolbar-tools" ng-click="mainCtrl.changeState('students')">{{ 'STUDENTS' | translate }}</a>
 				</md-toolbar>
 				<md-toolbar class="md-theme-indigo">
-					<a class="md-toolbar-tools" ng-click="mainCtrl.changeState('teachers')">Nastavnici</a>
+					<a class="md-toolbar-tools" ng-click="mainCtrl.changeState('teachers')">{{ 'TEACHERS' | translate }}</a>
 				</md-toolbar>
 			</md-sidenav>
 
-		<ui-view></ui-view>
-		
+			<ui-view></ui-view>
+		</div>
 	</body>
 </html>

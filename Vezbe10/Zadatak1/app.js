@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ui.router', 'ui.bootstrap', 'firebase', 'ngMaterial']);
+var app = angular.module('MyApp', ['ui.router', 'ui.bootstrap', 'firebase', 'ngMaterial', 'pascalprecht.translate']);
 
 app.config(function ($logProvider) {
 	$logProvider.debugEnabled(true);

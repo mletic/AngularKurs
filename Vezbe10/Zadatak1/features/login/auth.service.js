@@ -16,10 +16,6 @@ app.factory('Auth', function($rootScope, $state, $firebaseAuth)
 		}
 	});
 
-	$rootScope.logout = function () {
-		self.authObj.$signOut();
-	};
-
 	return self.authObj;
 
 });

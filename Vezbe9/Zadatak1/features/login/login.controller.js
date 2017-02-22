@@ -11,7 +11,6 @@ app.controller('LoginController', function($rootScope, $scope, Auth)
 			// The signed-in user info.
 			var user = result.user;
 			console.log(result);
-			self.profileImg = user.photoURL;
 		});
 	};
 
