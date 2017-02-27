@@ -1,0 +1,7 @@
+<md-sidenav class="md-sidenav-left" md-component-id="left">
+
+	<md-toolbar ng-repeat="item in myItems" class="md-theme-indigo">
+		<a class="md-toolbar-tools" ng-click="changeState(item.stateName)">{{ item.name | translate }}</a>
+	</md-toolbar>
+
+</md-sidenav>
