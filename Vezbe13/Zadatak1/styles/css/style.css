@@ -1,0 +1,92 @@
+.navbar {
+	border-radius: 0px;
+}
+.navbar-header .logo {
+	float: left;
+	width: 50px;
+}
+.navbar-header .navbar-brand:hover {
+	color: #9d9d9d;
+}
+md-backdrop.md-opaque {
+	top: 52px;
+}
+.md-sidenav-left {
+	top: 52px;
+	background-color: #222;
+}
+.md-sidenav-left .md-toolbar-tools {
+	border-bottom: 1px #222 solid;
+	color: #222;
+	cursor: pointer;
+}
+.md-sidenav-left .md-toolbar-tools:hover {
+	color: #fff;
+	text-decoration: none
+}
+.user-data {
+	float: right;
+	color: #fff;
+}
+.user-data .user-email {
+	padding: 15px;
+}
+.user-data img {
+	width: 50px;
+}
+.student-form {
+	border-left: 1px solid;
+}
+.student-form span {
+	display: block;
+}
+.student-form span label {
+	width: 100px;
+}
+.student-form .close-button{
+	position: absolute;
+	right: 0px;
+}
+.manji-prosek {
+	background-color: #666666;
+}
+.selected {
+	background-color: #b3b3b3;
+}
+.login-page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	background-image: url(http://dafed.org/wp-content/uploads/2016/12/background.png);
+	background-size: cover;
+}
+.login-page .login-content {
+	padding-top: 15%;
+}
+.login-page .login-content .logo {
+	width: 109px;
+	margin: 0 auto;
+}
+.login-page .login-content .logo-title {
+	display: block;
+	text-align: center;
+	font-size: 71px;
+	letter-spacing: -5px;
+	font-weight: bold;
+	color: #fff;
+}
+.login-page .login-content .login-controls {
+	width: 195px;
+	margin: 0 auto;
+}
+.login-page .login-content .login-controls .btn {
+	background-color: #d10069;
+	color: #fff;
+	border-radius: 0px;
+	font-size: 18px;
+	margin-top: 24px;
+}
+.login-page .login-content .login-controls .btn i {
+	padding-right: 8px;
+}
