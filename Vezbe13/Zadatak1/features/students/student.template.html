@@ -1,10 +1,11 @@
 <div class="col-md-12 main-content" ng-controller="StudentController as studentCtrl">
 	<!--TABLE -->
 	<div ng-class="studentCtrl.student ? 'col-md-8' : 'col-md-12'">
-		<h1>TABELA</h1>
 		<button class="add-button" ng-click="studentCtrl.addStudentDataToEditForm(null)">
 			<i class="fa fa-plus"></i>
 		</button>
+		<h1>TABELA</h1>
+
 		<table class="table" data-test-id="table">
 			<thead>
 				<tr>
