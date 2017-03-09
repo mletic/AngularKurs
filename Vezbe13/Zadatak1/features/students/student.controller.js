@@ -49,9 +49,7 @@ app.controller('StudentController', ['$scope', '$log', 'studentDataService', '$f
 	self.dodajStudenta = function () {
 		$log.debug('StudentController.dodajStudenta()');
 
-		studentDataService.addStudent(self.student).then(function() {
-			//self.initLoad();
-		});
+		studentDataService.addStudent(self.student);
 		
 	};
 
@@ -70,8 +68,15 @@ app.controller('StudentController', ['$scope', '$log', 'studentDataService', '$f
 	self.addStudentDataToEditForm = function (id) {
 		$log.debug('StudentController.addStudentDataToEditForm()');
 
-		self.student = angular.copy(self.students[id]);
-		self.id = id;
+		if (id) {
+			self.student = angular.copy(self.students[id]);
+			if (self.student.dateOfBirth) {
+				self.student.dateOfBirth = new Date (self.student.dateOfBirth);
+			}
+			self.id = id;
+		} else {
+			self.student = {};
+		}
 	};
 
 	self.closeDetailView = function () {

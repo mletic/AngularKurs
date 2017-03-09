@@ -16,27 +16,32 @@ app.factory('studentDataService', ['$log', '$http', '$q', '$firebaseObject', '$r
 	function addStudent (student) {
 		$log.debug('studentDataService.addStudent()');
 
-		return $http({
-			url: rootUrl + 'students.json',
-			timeout: 10000,
-			method: "POST",
-			data: student
-		})
-		.then(addStudentComplete)
-		.catch(addStudentFailed);
+		$rootScope.user.getToken(false).then(function(idToken) {
+			return $http({
+				url: rootUrl + 'students.json',
+				timeout: 10000,
+				method: "POST",
+				data: student,
+				params: {
+					'auth': idToken
+				}
+			})
+			.then(addStudentComplete)
+			.catch(addStudentFailed);
 
-		function addStudentComplete(response) {
-			$log.debug('studentDataService.addStudentComplete()');
+			function addStudentComplete(response) {
+				$log.debug('studentDataService.addStudentComplete()');
 
-			return response.data;
-		}
+				return response.data;
+			}
 
-		function addStudentFailed(error) {
-			$log.error('studentDataService.addStudentFailed()');
+			function addStudentFailed(error) {
+				$log.error('studentDataService.addStudentFailed()');
 
-			$log.error('Adding new student failed with status: ' + error.status);
-			return $q.reject(error);
-		}
+				$log.error('Adding new student failed with status: ' + error.status);
+				return $q.reject(error);
+			}
+		});
 	}
 
 	function getStudents () {
@@ -94,6 +99,7 @@ app.factory('studentDataService', ['$log', '$http', '$q', '$firebaseObject', '$r
 		$log.debug('studentDataService.updateStudent()');
 
 		$rootScope.user.getToken(false).then(function(idToken) {
+			//$rootScope.user.Ed WTF?
 			return $http({
 				url: rootUrl + 'students/' + id + '.json',
 				timeout: 10000,

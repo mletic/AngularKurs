@@ -5,7 +5,7 @@ app.factory('Auth', function($rootScope, $state, $firebaseAuth)
 	self.authObj = $firebaseAuth(firebase.auth());
 	self.authObj.$onAuthStateChanged(function(user) {
 		if (user) {
-			console.log(user);
+			//console.log(user);
 			$rootScope.user = user;
 			self.loggedIn = true;
 			$state.go('students');

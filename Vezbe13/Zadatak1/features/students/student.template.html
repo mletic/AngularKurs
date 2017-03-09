@@ -1,7 +1,10 @@
-<div class="col-md-12" ng-controller="StudentController as studentCtrl">
+<div class="col-md-12 main-content" ng-controller="StudentController as studentCtrl">
 	<!--TABLE -->
 	<div ng-class="studentCtrl.student ? 'col-md-8' : 'col-md-12'">
 		<h1>TABELA</h1>
+		<button class="add-button" ng-click="studentCtrl.addStudentDataToEditForm(null)">
+			<i class="fa fa-plus"></i>
+		</button>
 		<table class="table" data-test-id="table">
 			<thead>
 				<tr>
@@ -60,7 +63,7 @@
 			<label>Godina upisa: </label>
 			<input type="number" ng-model="studentCtrl.student.year"/>
 		</span>
-		<span>
+		<span style="display: flex;">
 			<label>Datum rodjenja: </label>
 			<p class="input-group">
 				<input type="text" class="form-control" uib-datepicker-popup ng-model="studentCtrl.student.dateOfBirth" is-open="studentCtrl.popup2.opened" datepicker-options="studentCtrl.dateOptions" ng-required="true" close-text="Close" />

@@ -1,5 +1,9 @@
 <div>
-	<a class="btn btn-default" ng-click="modalCtrl.changeLanguage('rs')">{{ 'SERBIAN' | translate }}</a>
-	<a class="btn btn-default" ng-click="modalCtrl.changeLanguage('en')">{{ 'ENGLISH' | translate }}</a>
-	<a class="btn btn-default" ng-click="modalCtrl.logout()">Log out</a>
+	<div class="language-container">
+		<a class="btn btn-default" ng-click="modalCtrl.changeLanguage('rs')">{{ 'SERBIAN' | translate }}</a>
+		<a class="btn btn-default" ng-click="modalCtrl.changeLanguage('en')">{{ 'ENGLISH' | translate }}</a>
+	</div>
+	<div class="logout-container">
+		<a class="btn btn-default btn-logout" ng-click="modalCtrl.logout()">Log out</a>
+	</div>
 </div>
