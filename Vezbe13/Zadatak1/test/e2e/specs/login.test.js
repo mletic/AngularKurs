@@ -13,7 +13,7 @@ describe('Test login functionality', function() {
 		browser.get("#/login").then(function() {
 			expect(loginButton.isDisplayed()).toBeTruthy();
 
-			var logoImg = element(by.css('[src="http://dafed.org/wp-content/themes/dafedwp/logo.png"]'));
+			var logoImg = element(by.css('[src="images/logo.png"]'));
 			expect(logoImg.isDisplayed()).toBeTruthy();
 		});
 	});
