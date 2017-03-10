@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>Kurs - Uvod u Angular.js</title>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="app.js"></script>
+		<script src="main.controller.js"></script>
+	</head>
+	<body ng-app='MyApp'>
+
+		<div ng-controller="MainController as mainCtrl">
+			<div>{{mainCtrl.message}}</div>
+			<a ng-click="mainCtrl.update()">Klikni za update</a>
+		</div>
+	</body>
+</html>

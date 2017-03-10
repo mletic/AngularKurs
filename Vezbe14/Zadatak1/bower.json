@@ -1,0 +1,16 @@
+{
+  "name": "Zadatak 4",
+  "homepage": "https://github.com/mletic/AngularKurs",
+  "authors": [
+    "MarkoLetic"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.6.3"
+  },
+  "resolutions": {
+    "angular": ">=1.6.3"
+  }
+}
